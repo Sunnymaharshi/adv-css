@@ -1,0 +1,23 @@
+Notes 
+    clip-path 
+        used to clip the image in desired shape
+        ex:polygon, triangle etc shape for the image
+    span
+        can be used to style two things differently
+        but interpret both as single 
+        ex:Heading with caption
+    center a div
+        if we don't know it's size or it has some big shape
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        now div little to the right from center because of it's size
+        transform: translate(-50%,-50%);
+        translate will move 50% of ***it's own width and height to left and top respectively
+        so this make center of div is centered inside parent
+    transition is used for simple animations
+    animations 
+        create 
+            @keyframes animation-name
+        use 
+            animation : animation-name 1s

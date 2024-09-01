@@ -1,0 +1,156 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #777;
+    padding: 30px;
+}
+.header {
+    height: 95vh;
+    background-image: linear-gradient(
+        to right bottom,
+        #7ed56fcc,#28b485cc),
+        url('./../img/hero.jpg');
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0 0,100% 0,100% 75vh,0 100%);
+    position: relative;
+}
+
+.log-box{
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+.logo{
+    height: 35px;
+}
+.text-box{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /* 
+    translate will move 50% of it's own width and height to left and top respectively
+    so this makes center of div is centered inside parent
+    */
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.heading-primary{
+    color: #fff;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    margin-bottom: 60px;
+}
+.heading-primary-main{
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
+    animation-name: moveinLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
+.heading-primary-sub{
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 17.4px;
+    animation: moveinRight 1s ease-out;
+}
+
+@keyframes moveinLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    80% {
+        transform: translateX(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes moveinRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    80% {
+        transform: translateX(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes moveinBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.btn:link,
+.btn:visited{
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: transform .2s, box-shadow .2s;
+    position: relative;
+}
+.btn-animate{
+    animation: moveinBottom 0.5s ease-out 0.3s backwards;
+}
+.btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+}
+.btn:active{
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+.btn-white{
+    color: #777;
+    background-color: #fff;
+}
+.btn::after{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition: transform .4s,opacity .4s;
+}
+.btn-white::after{
+    background-color: #fff;
+}
+.btn:hover::after{
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
