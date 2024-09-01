@@ -1,4 +1,134 @@
 Notes 
+    CSS behind the scenes
+        CSS parsing in browser
+            cascade
+                combine different style sheets
+                resolve conflicting CSS declarations
+                priority order 
+                    important > specificity > source order 
+                    specificity
+                        inline > id > classes > elements
+                        1 id > 1000 classes
+                        1 class > 1000 elements
+                        * selector has no specificity value
+            process final css values
+            CSS Object Model (CSSOM) is created
+            DOM and CSSOM forms Render tree 
+            website is rendered
+    units 
+        em  
+            relative to it's parent font size
+            for lengths, it is relative to it's current font size
+        rem 
+            relative to a base font-size
+            base/root font size is usually 16px
+            we can override root font size like 
+                html {
+                    font-size: 12px;
+                }
+        vh,vw are viewport(screen) height and viewport(screen) width
+    why to change px units to rem?
+        we can easily change all measurement with 1 change i.e. root font size
+        for mobile, all measurements will be automatically adjusted
+        it changes measurements according to user preference(front size)
+        help ensure consistency across different devices and screen sizes. 
+        Since REMs are based on the root font size
+    pseudo classes 
+        special state of an element.
+        ex: for anchor (a) tag
+        a:link
+            unvisited state 
+        a:visited
+        a:hover
+        a:active 
+            selected state
+        and also first-child, last-child etc 
+    pseudo elements
+        used to style specified parts of an element
+        ex: ::first-letter,::before,::after,::selection etc
+
+    display 
+        inline 
+            no height and width properties
+            can have left & right margins and padding, but not top & bottom
+            occupies only content size.
+            displays the element inline or on the same line
+            ex: span,a, img
+        inline-block
+            same as inline 
+            can set height and width
+            respect top & bottom margins and padding
+        block 
+            starts on a new line and takes up the full width available (parent width).
+            can set width and height
+    position
+        default
+            normal flow
+            position:relative;
+        Floats 
+            element removed from normal flow 
+            text and inline elements will wrap around floated element
+            container will not adjust it's height to the element
+            float:left;
+            float:right;
+        absolute 
+            element removed from normal flow 
+            no impact on surrounding content or elements
+            top,bottom,right,left are used to offset the element from it's relative positioned container
+            position:absolute
+            position:fixed
+    
+
+    Meaning full class names 
+        Block Element Modifier (BEM)
+            Block 
+                standalone component that is meaningfull on it's only 
+            Element
+                part of block, that has no standalone meaning 
+            Modifier
+                a different version of block or element
+            ex: .header {}
+            .header__main {}
+            .header__main-white {}
+
+    SAAS
+        CSS preprocessor
+        SAAS code -> compiled CSS code
+        features
+            variables
+            nesting
+            operators
+                for math operations in CSS 
+            Partials and imports 
+                to write CSS in different files and importing them into 1 single file
+            Mixins
+                to write reusable pieces of CSS code 
+            Functions 
+                similar to mixins, with difference that they can produce a value that can be used 
+            extends
+                to make different selectors inherit declarations that are common to all of them
+            control directives
+                for writing complex code using conditions and loops
+            SASS vs SCSS syntax 
+                SASS don't have {}, SCSS have {}                
+                SASS
+                    .nav 
+                        list-item:none;
+
+                        & li 
+                            margin-left:30px;
+                SCSS
+                    .nav {
+                        list-item:none;
+
+                        & li {
+                            margin-left:30px;
+                        }
+                    }
+            $var-name is used to create variables
+            & copies selector until that point inside nested 
+            is used for pseudo classes and elements
+
     clip-path 
         used to clip the image in desired shape
         ex:polygon, triangle etc shape for the image
