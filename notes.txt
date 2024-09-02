@@ -138,8 +138,7 @@ Notes
                         }
                     }
             $var-name is used to create variables
-            & copies selector until that point inside nested 
-            is used for pseudo classes and elements
+            & copies selector until that point inside nested
 
     clip-path 
         used to clip the image in desired shape
