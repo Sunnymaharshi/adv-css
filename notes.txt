@@ -179,6 +179,9 @@ Notes
     clip-path 
         used to clip the image in desired shape
         ex:polygon, triangle etc shape for the image
+    -webkit-background-clip: text;
+        background image is cliped exactly like the text 
+        image is shown background of letters
     span
         can be used to style two things differently
         but interpret both as single 
