@@ -158,7 +158,24 @@ Notes
                 themes
                 vendors
 
-
+    Responsive design principles 
+        Fluid layouts 
+            to allow webpage to adapt to current viewport width or height
+            use %vh/vw instead of px 
+            max-width instead of width
+        Responsive units 
+            rem instead of px
+        Flexible Images 
+            use % dimensions along with max-width
+        Media queries 
+            change css on certain viewport widths (breakpoints)
+    Layout Types 
+        Float layouts 
+            old way of building layouts
+        Flex box 
+            modern way of building 1-dimensional row/column
+        CSS Grid 
+            for laying out element in a fully fledged 2-dimensional grid         
     clip-path 
         used to clip the image in desired shape
         ex:polygon, triangle etc shape for the image
