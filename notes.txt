@@ -101,6 +101,7 @@ Notes
                 for math operations in CSS 
             Partials and imports 
                 to write CSS in different files and importing them into 1 single file
+                file name starts with underscore
             Mixins
                 to write reusable pieces of CSS code 
                 create
@@ -139,6 +140,24 @@ Notes
                     }
             $var-name is used to create variables
             & copies selector until that point inside nested
+        folder structure for sass (7-1)
+            styles
+                main.scss
+                base
+                    presets
+                    animations
+                    typography
+                    utilities etc
+                layout
+                abstracts
+                    functions 
+                    mixins
+                    variables
+                components
+                pages
+                themes
+                vendors
+
 
     clip-path 
         used to clip the image in desired shape

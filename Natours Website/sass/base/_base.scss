@@ -1,0 +1,12 @@
+*,*::after,*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+html {
+    /* rem calculated for font-size 10px, for 16px is 10/16*/
+    font-size: 62.5%;
+}
+body {
+    box-sizing:border-box;
+}
