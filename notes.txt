@@ -103,10 +103,22 @@ Notes
                 to write CSS in different files and importing them into 1 single file
             Mixins
                 to write reusable pieces of CSS code 
+                create
+                    @mixin name {}
+                use 
+                    @include name
             Functions 
-                similar to mixins, with difference that they can produce a value that can be used 
+                similar to mixins, with difference that they can return a value that can be used 
+                create
+                    @function name {}
+                use 
+                    name()
             extends
                 to make different selectors inherit declarations that are common to all of them
+                create placeholder 
+                    %name {}
+                use
+                    @extend %name
             control directives
                 for writing complex code using conditions and loops
             SASS vs SCSS syntax 
