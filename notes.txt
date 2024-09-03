@@ -182,10 +182,17 @@ Notes
     -webkit-background-clip: text;
         background image is cliped exactly like the text 
         image is shown background of letters
+        font color should be transparent
+    Responsive Images 
+        given dimensions in % to make them adjust for different devices
     span
         can be used to style two things differently
         but interpret both as single 
         ex:Heading with caption
+    outline vs border 
+        outline is same as border 
+        but with outline we can give some gap btw outline and element
+        with 'outline-offset' property
     center a div
         if we don't know it's size or it has some big shape
         position: absolute;
@@ -201,3 +208,9 @@ Notes
             @keyframes animation-name
         use 
             animation : animation-name 1s
+    skew 
+        streaches element in X or Y or both directions
+    background-blend-mode
+        to blend gradient and image for background-image
+    
+        
