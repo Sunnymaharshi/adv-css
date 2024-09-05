@@ -202,6 +202,12 @@ Notes
         transform: translate(-50%,-50%);
         translate will move 50% of ***it's own width and height to left and top respectively
         so this make center of div is centered inside parent
+    center a block element inside a block element
+        margin: 0 auto;
+        browser will set margin equally at left and right 
+    shape-outside 
+        property controls how content will wrap around a floated element’s bounding-box. 
+        Typically this is so that text can reflow over a shape such as a circle, ellipse or a polygon:
     transition is used for simple animations
     animations 
         create 
@@ -212,5 +218,11 @@ Notes
         streaches element in X or Y or both directions
     background-blend-mode
         to blend gradient and image for background-image
+    weird behaviour in transform 
+        backface-visibility: hidden
+        this will solve the issue in most cases
+    filter
+        used to give some effects to the element
+        like blur, brightness etc
     
         
