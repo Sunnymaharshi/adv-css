@@ -74,9 +74,10 @@ Notes
         absolute 
             element removed from normal flow 
             no impact on surrounding content or elements
-            top,bottom,right,left are used to offset the element from it's relative positioned container
-            position:absolute
-            position:fixed
+            top,bottom,right,left are used to offset the element from it's relative/other positioned container           
+        fixed
+            same as absolute
+            but it doesn't change position when scrolling, it stays there
     
 
     Meaning full class names 
@@ -225,9 +226,13 @@ Notes
         used to give some effects to the element
         like blur, brightness etc
     linear gradient
+        gradient starts from 1 side to other side
         we can specify % at which point in length color should be for each color 
         ex: white 0%, white 50% 
         from 0 to 50% of len solid white will be there
+    radial gradient
+        gradient starts from middle of element to total element
+
         
     
         
