@@ -232,6 +232,8 @@ Notes
         from 0 to 50% of len solid white will be there
     radial gradient
         gradient starts from middle of element to total element
+    :target pseudo class
+        applies when url changes to id of special element
 
         
     
