@@ -224,5 +224,10 @@ Notes
     filter
         used to give some effects to the element
         like blur, brightness etc
+    linear gradient
+        we can specify % at which point in length color should be for each color 
+        ex: white 0%, white 50% 
+        from 0 to 50% of len solid white will be there
+        
     
         
