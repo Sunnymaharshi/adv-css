@@ -192,7 +192,11 @@ Notes
         image is shown background of letters
         font color should be transparent
     Responsive Images 
-        given dimensions in % to make them adjust for different devices
+        give right images for right screen size
+        avoid large images on smaller devices
+        can use different images on different devices
+        can change images as per density or width using srcset and sizes
+        in media queries we can use min/max-resolution
     span
         can be used to style two things differently
         but interpret both as single 
