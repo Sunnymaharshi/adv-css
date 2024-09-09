@@ -109,6 +109,13 @@ Notes
                     @mixin name {}
                 use 
                     @include name
+                @content
+                    used to pass block of code to mixin
+                    ex: @include name{
+                        // code to pass inside mixin
+                    }
+                @if 
+                    to check passed arguments
             Functions 
                 similar to mixins, with difference that they can return a value that can be used 
                 create
@@ -234,6 +241,12 @@ Notes
         gradient starts from middle of element to total element
     :target pseudo class
         applies when url changes to id of special element
+    
+    Responsive 
+        desktop first approach
+            we use max-width in media queries
+        mobile first approach
+            we use min-width in media queries
 
         
     
