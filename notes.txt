@@ -251,7 +251,11 @@ Notes
             we use max-width in media queries
         mobile first approach
             we use min-width in media queries
+    
+    @supports
+        used to check if browser supports specified declaration
+        ex: @supports (clip-path:polygon(0,0)){
 
-        
+        }        
     
         
