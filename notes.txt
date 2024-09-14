@@ -256,6 +256,70 @@ Notes
         used to check if browser supports specified declaration
         ex: @supports (clip-path:polygon(0,0)){
 
-        }        
+        }  
+
+    Flexbox 
+        used to align elements to one another, in different directions and orders in 1D layouts
+        main axis is parallel to flex direction and cross axis is perpendicular to flex direction         
+        usage: display: flex;
+        flex container properties
+            flex-direction
+                row 
+                row-reverse
+                column
+                column-reverse
+            flex-wrap 
+                nowrap
+                wrap
+                wrap-reverse
+            justify-content
+                defines alignment in main axis 
+                flex-start 
+                flex-end 
+                center 
+                space-between 
+                space-around 
+                space-evenly
+            align-items
+                defines alignment in cross axis
+                stretch
+                flex-start 
+                flex-end 
+                center 
+                baseline
+                    aligns items to text inside the items, text as a base 
+            align-content 
+                applys when there is more than 1 row of flex items in cross axis (wrapped to next row)
+                stretch
+                flex-start 
+                flex-end 
+                center 
+                space-between 
+                space-around 
+        flex item properties 
+            align-self 
+                overrides container align-items property
+            order 
+                defines order of item 
+            flex-grow
+                defines who much item can grow, expanding as much as it can
+                defines how much this items needs to grow relative to other items
+                default auto
+            flex shrink 
+                defines who much item can shrink
+                default 1, when wiewport is decreased, items will shrink
+            flex-basis
+                defines base length of item
+            all three properties can be set as 
+                flex: 0 1 auto
+            
+
+
+
+
+            
+            
+            
+
     
         

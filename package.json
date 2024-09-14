@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass-watch": "sass --watch --update --no-source-map --style=expanded ./'Natours Website'/sass/main.scss:./'Natours Website'/css/style.css",
-    "sass-build": "sass --no-source-map --style=compressed ./'Natours Website'/sass/main.scss:./'Natours Website'/css/style.css"
+    "sass-watch-1": "sass --watch --update --no-source-map --style=expanded ./'Natours Website'/sass/main.scss:./'Natours Website'/css/style.css",
+    "sass-build-1": "sass --no-source-map --style=compressed ./'Natours Website'/sass/main.scss:./'Natours Website'/css/style.css",
+    "sass-watch-2": "sass --watch --update --no-source-map --style=expanded ./Trillo/sass/main.scss:./Trillo/css/style.css",
+    "sass-build-2": "sass --no-source-map --style=compressed ./Trillo/sass/main.scss:./Trillo/css/style.css"
   },
   "author": "",
   "license": "ISC",
