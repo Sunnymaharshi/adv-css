@@ -312,14 +312,75 @@ Notes
                 defines base length of item
             all three properties can be set as 
                 flex: 0 1 auto
-            
 
-
-
-
-            
-            
-            
-
-    
-        
+    Grid
+        display: grid;
+        row axis and column axis
+        numbering is given to each line in grid for both axis
+        repeat 
+            used to repeat the sizes 
+            ex: grid-template-rows: repeat(2,150px)
+            creates 2 rows of height 150px
+            names 
+                repeat(2,[row-start] 150px [row-end])
+                usage of these names 
+                row-start 1 / row-end 2
+                we add position number after name
+        fr 
+            fractional unit 
+            1fr means to take all available space
+            used to define parts 
+            ex:grid-template-columns: 1fr 2fr 1fr;
+            middle column will double the space of first/last column
+        container properties
+            grid-template-rows
+                define heights of the rows
+                names for tracks
+                    grid-template-rows: [row1-start] 1fr [row1-end row2-start] 1fr
+                    we can give only start name or both start and end names 
+                    we can use these names instead of numbers for items
+                    same for columns as well
+            grid-template-columns
+                define widths of the columns
+            grid-template-areas
+            grid-row-gap
+            grid-column-gap 
+            grid-gap 
+                same gap btw for both columns and rows
+            justify-items
+            align-items 
+            justify-content 
+            align-content 
+            grid-auto-rows
+            grid-auto-columns
+            grid-auto-flows
+        item properties
+            grid-row-start
+                define start row number to position the item in grid
+            grid-row-end
+                define end row number to position the item in grid
+            grid-column-start
+                same as above 
+            grid-column-end
+                same as above 
+            grid-row 
+                combine start and end row number
+                ex: start / end
+            grid-column
+                combine start and end column number
+                ex: start / end
+            grid-area
+                it combines above grid-row grid-column 
+                ex: row start / row end / column start / column end
+            *by increasing grid-row or grid column end number we can span/merge the cells
+            span 
+                span is used to specify no of cells that item needs to occupy
+                ex: grid-column: 1/span 2
+                this item will span to 2 cells 
+                -1 for end
+                    to span until the end 
+                    ex: grid-column: 1/-1
+            we can have multiple grid items on same cell (stacked on eachother)
+            justify-self
+            align-self
+            order
