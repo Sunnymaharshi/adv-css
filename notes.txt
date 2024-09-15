@@ -332,6 +332,9 @@ Notes
             used to define parts 
             ex:grid-template-columns: 1fr 2fr 1fr;
             middle column will double the space of first/last column
+        Implicit grids
+            if items are more than what we defines in templates
+            Implicit grids are created automatically to accomidate  all items
         container properties
             grid-template-rows
                 define heights of the rows
@@ -342,18 +345,52 @@ Notes
                     same for columns as well
             grid-template-columns
                 define widths of the columns
+            max-content 
+                set to width/height of max content in that column/row
+            min-content 
+                set min width/height required to fit the content in that column/row
+            minmax()
+                set min and max width/height for column/row
+                ex:grid-template-rows: repeat(2,minmax(150px, min-content))
+            auto-fill
+                creates columns throughout the container with specified width
+                ex: grid-template-columns:repeat(auto-fill,100px)
+                this will create as many as columns to fit inside the container
+                same for rows 
+            auto-fit 
+                same as auto-fill
+                but empty cells width will be 0 if any, leaving space inside container
             grid-template-areas
+                we can give names to all the cells in grid 
+                then those names can be used in item grid area 
+                ex: grid-template-area: "head head side"
+                                        "main main side" 
+                    grid-area: head; like wise for each item
+                    here, head item will span 2 cells in the row, as specified in template area
             grid-row-gap
             grid-column-gap 
             grid-gap 
                 same gap btw for both columns and rows
             justify-items
+                aligns items in x/row axis
+                default stretch
             align-items 
+                aligns items in y/column axis
+                default stretch
             justify-content 
+                if grid is smaller than it's container, we can use these to align it inside container
+                aligns grid in x/row axis
             align-content 
+                aligns grid in y/column axis
             grid-auto-rows
+                define height of Implicit rows
             grid-auto-columns
-            grid-auto-flows
+                define width of Implicit columns
+            grid-auto-flow
+                define flow of Implicit grid, Implicit items will be added in next row
+                default row
+                adding dense 
+                    it removes any empty cells, fill those cells with items 
         item properties
             grid-row-start
                 define start row number to position the item in grid
@@ -382,5 +419,9 @@ Notes
                     ex: grid-column: 1/-1
             we can have multiple grid items on same cell (stacked on eachother)
             justify-self
+                aligns item in x/row axis
+                default stretch
             align-self
-            order
+                aligns item in y/column axis
+                default stretch
+            order        
