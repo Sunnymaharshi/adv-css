@@ -415,7 +415,7 @@ Notes
                 ex: grid-column: 1/span 2
                 this item will span to 2 cells 
                 -1 for end
-                    to span until the end 
+                    to span until the end of * explicit grid
                     ex: grid-column: 1/-1
             we can have multiple grid items on same cell (stacked on eachother)
             justify-self
