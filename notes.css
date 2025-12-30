@@ -17,23 +17,105 @@ Notes
             DOM and CSSOM forms Render tree 
             website is rendered
     units 
+        Absolute Units
+            Fixed size, doesn't change
+            px (Pixels)
+                What it is: One device pixel on standard displays, CSS pixel on high-DPI screens
+                Characteristics
+                    Most common and intuitive
+                    1px ≠ 1 physical pixel on Retina/high-DPI screens
+                    Browser may zoom px values
+                    Predictable and consistent
+                When to use:
+                    Borders: border: 1px solid black
+                    Small, precise spacing that shouldn't scale
+                    Box shadows: box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                    Media queries (though em is often better)
+                When NOT to use:
+                    Font sizes (accessibility issues - users can't scale)
+                    Container widths (not responsive)
+                    Padding/margin that should scale with content
+        Relative Units
+            Size relative to something else (parent, viewport, font size)
         em  
-            relative to it's parent font size
-            for lengths, it is relative to it's current font size
-        rem 
+            Relative to the font-size of the parent element
+            Key rule:
+                font-size in em = relative to parent's font-size
+                Other properties in em = relative to element's own font-size
+                .parent {
+                    font-size: 16px;
+                }
+                .child {
+                    font-size: 2em;  // 32px (2 × 16px) 
+                    padding: 1em;    // 32px (1 × own font-size) 
+                    margin: 0.5em;   // 16px (0.5 × own font-size) 
+                }
+            Compounding issue
+                html { font-size: 16px; }
+                .level-1 { font-size: 1.5em; }  // 24px
+                .level-2 { font-size: 1.5em; }  // 36px (1.5 × 24)
+                .level-3 { font-size: 1.5em; }  // 54px (1.5 × 36) - OOPS!
+            When NOT to use:
+                Font sizes (use rem instead to avoid compounding)
+                When you need predictable, consistent sizing
+        rem (Root em)
             relative to a base font-size
             base/root font size is usually 16px
+            Characteristics:
+                No compounding - always relative to root
+                Predictable and consistent
+                Best practice for modern web development
+                Respects user's browser font-size preferences (accessibility)
             we can override root font size like 
                 html {
                     font-size: 12px;
                 }
         vh,vw are viewport(screen) height and viewport(screen) width
-    why to change px units to rem?
-        we can easily change all measurement with 1 change i.e. root font size
-        for mobile, all measurements will be automatically adjusted
-        it changes measurements according to user preference(front size)
-        help ensure consistency across different devices and screen sizes. 
-        Since REMs are based on the root font size
+        Modern Viewport Units (New)
+            dvw, dvh (Dynamic)
+                Adjust for browser UI (address bars, etc.)
+                lvw, lvh (Large): When browser UI is hidden
+                svw, svh (Small): When browser UI is shown
+        clamp()
+            Responsive sizing with min/max bounds
+            width: clamp(300px, 50%, 600px);
+            Between 300px and 600px, preferring 50%
+    CSS Resetting
+        Browsers apply default styles (user-agent stylesheets) inconsistently across different browsers.
+        Reset or normalize CSS to create a consistent baseline.
+        CSS Reset (Aggressive)
+            Strips all default browser styles to zero.
+            Remove all margins, paddings, borders
+            Set everything to baseline
+            Forces you to explicitly style everything
+        CSS Normalize 
+            Preserves useful defaults, fixes inconsistencies.
+            Keep useful browser defaults
+            Fix bugs and inconsistencies
+        Modern Approach: Custom Resets
+            *, *::before, *::after {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            html {
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+            body {
+                line-height: 1.5;
+                min-height: 100vh;
+            }
+            img, picture, video, canvas, svg {
+                display: block;
+                max-width: 100%;
+            }
+            input, button, textarea, select {
+                font: inherit;
+            }
+            p, h1, h2, h3, h4, h5, h6 {
+                overflow-wrap: break-word;
+            }
     pseudo classes 
         special state of an element.
         ex: for anchor (a) tag
@@ -83,12 +165,14 @@ Notes
 
     Meaning full class names 
         Block Element Modifier (BEM)
+            A naming convention for CSS classes that creates scalable, maintainable, and predictable code.
             Block 
-                standalone component that is meaningfull on it's only 
+                standalone component
             Element
                 part of block, that has no standalone meaning 
             Modifier
                 a different version of block or element
+            syntax: .block__element--modifier
             ex: .header {}
             .header__main {}
             .header__main-white {}
